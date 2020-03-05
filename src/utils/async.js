@@ -19,4 +19,10 @@ export const getDataPromise = ()=> {
     })
 }
 
-
+export const getDataPromiseError = ()=> {
+    return new Promise((resolve,reject)=>{
+        setTimeout(()=>{
+            reject('Error')
+        },2000)
+    })
+}
