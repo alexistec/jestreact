@@ -11,12 +11,12 @@ export const getDataCallback = (callback) => {
 }
 
 
-export const getDataPromise =  () => {
-
-    return new Promise((resolve,reject)=> {
+export const getDataPromise = ()=> {
+    return new Promise((resolve,reject)=>{
         setTimeout(()=>{
-            resolve('Alexis quiñonez')
+            resolve('Alexis Quiñonez')
         },2000)
     })
 }
+
 

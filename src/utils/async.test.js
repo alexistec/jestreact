@@ -1,4 +1,4 @@
-import {getDataCallback} from './async';
+import {getDataCallback,getDataPromise} from './async';
 
 describe('Test asynchronous operations',()=>{
     test('Testing callback',(done) => {
@@ -7,4 +7,24 @@ describe('Test asynchronous operations',()=>{
             done()
         })
     })
+
+
+    test('Testing promises',(done) =>{
+        getDataPromise()
+        .then((name)=>{
+            expect(name).toBe('Alexis Quiñonez')
+            done()
+        })
+    })
+
+
+    test('Testing promises to expect',()=>{
+        return expect(getDataPromise()).resolves.toBe('Alexis sssss')
+    })
+
+
+    test('Testing promise to expect',()=>{
+        //return expect()
+    })
+
 })
