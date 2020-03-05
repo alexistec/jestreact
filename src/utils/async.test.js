@@ -1,4 +1,9 @@
-import {getDataCallback,getDataPromise,getDataPromiseError} from './async';
+import {
+    getDataCallback,
+    getDataPromise,
+    getDataPromiseError,
+    getUsers
+} from './async';
 
 describe('Test asynchronous operations',()=>{
     test('Testing callback',(done) => {
@@ -50,6 +55,14 @@ describe('Test asynchronous operations',()=>{
         }catch(error){
             expect(error).toBe('Error')
         }
+    })
+
+    test('Test promise with HTTP request',async ()=>{
+        const user = await getUsers();
+        expect(user).toHaveProperty('username');
+        expect(user).toHaveProperty('id');
+        expect(user).toHaveProperty('email');
+        expect(user).toHaveProperty('Direction');
     })
 
 })
